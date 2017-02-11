@@ -13,9 +13,9 @@ class pvp_app(Frame):
 
 		self.start_label=Label(self,text="Who starts the game??")
 		self.start_label.grid(row=0,columnspan=11)
-		self.p1_button=Button(self,text="1",fg="blue",command=lambda: self.startGame(TRUE,FALSE))
+		self.p1_button=Button(self,text="Pl 1",fg="blue",command=lambda: self.startGame(TRUE,FALSE))
 		self.p1_button.grid(row=0,column=0)
-		self.p2_button=Button(self,text="2",fg="blue",command=lambda: self.startGame(FALSE,TRUE))
+		self.p2_button=Button(self,text="Pl 2",fg="blue",command=lambda: self.startGame(FALSE,TRUE))
 		self.p2_button.grid(row=0,column=9)
 		self.back_p_button=Button(self,text="Back",fg="blue",bg="green",command=self.back_r_button,height=1,width=2)
 		self.back_p_button.grid(row=12,column=5)
