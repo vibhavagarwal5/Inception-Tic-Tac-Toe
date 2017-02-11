@@ -11,8 +11,8 @@ class pvp_app(Frame):
 		self.back_s_button.grid_forget()
 		self.startgame_label.grid_forget()
 
-		self.start_label=Label(self,text="WHO")
-		self.start_label.grid(row=0,column=5)
+		self.start_label=Label(self,text="Who starts the game??")
+		self.start_label.grid(row=0,columnspan=11)
 		self.p1_button=Button(self,text="1",fg="blue",command=lambda: self.startGame(TRUE,FALSE))
 		self.p1_button.grid(row=0,column=0)
 		self.p2_button=Button(self,text="2",fg="blue",command=lambda: self.startGame(FALSE,TRUE))
@@ -86,11 +86,11 @@ class pvp_app(Frame):
 				self.button_lst[i][j].config(state=NORMAL)
 
 		if(p1==TRUE):
-			self.start_label.config(text="1-X")
+			self.start_label.config(text="Player 1 starts with X")
 			self.turn=TRUE
 		
 		else:
-			self.start_label.config(text="2-O")
+			self.start_label.config(text="Player 2 starts with O")
 			self.turn=FALSE
 
 		self.bState=[[10,10,10,10,10,10,10,10,10,10],
@@ -145,14 +145,14 @@ class pvp_app(Frame):
 		for i in self.bSum:
 			for j in i:
 				if(j==3):
-					self.start_label.config(text="1 WON")
+					self.start_label.config(text="PLAYER 1 WON")
 					self.GameDone=TRUE
 					for a in range(1,10):
 						for b in range(1,10):
 							self.button_lst[a][b].config(state=DISABLED)
 					break
 				elif(j==-3):
-					self.start_label.config(text="2 WON")
+					self.start_label.config(text="PLAYER 2 WON")
 					self.GameDone=TRUE
 					for a in range(1,10):
 						for b in range(1,10):
@@ -165,7 +165,7 @@ class pvp_app(Frame):
 							if j!=0 and j!=10:
 								check=1
 					if check==0:
-						self.start_label.config(text="Drawn!!")
+						self.start_label.config(text="MATCH DRAWN!!")
 						self.GameDone=TRUE
 						for a in range(1,10):
 							for b in range(1,10):
